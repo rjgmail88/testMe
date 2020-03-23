@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.botframework.com/schemas/skills/skill-manifest-2.0.0.json",
+	"$id": "yammerBot",
+	"name": "yammerBot",
+	"version": "1.0",
+	"description": "This is a sample echo skill",
+	"publisherName": "Microsoft",
+	"privacyUrl": "https://echoskillbot.contoso.com/privacy.html",
+	"copyright": "Copyright (c) Microsoft Corporation. All rights reserved.",
+	"license": "",
+	"iconUrl": "https://echoskillbot.contoso.com/icon.png",
+	"tags": [
+	  "sample",
+	  "echo"
+	],
+	"endpoints": [
+	  {
+		"name": "default",
+		"protocol": "BotFrameworkV3",
+		"description": "Default endpoint for the skill",
+		"endpointUrl": "https://2cadf019.ngrok.io/api/messages",
+		"msAppId": "bef3ca2f-4ab9-40cc-b172-c12d4460b05c"
+	  }
+	],
+	"activities": {
+		"message": {
+		  "type": "message",
+		  "description": "Receives the user's' utterance and attempts to resolve it using the skill's LU models",
+		  "value": {
+			"$ref": "#/definitions/accountNumber"
+		  }
+		}
+	  },
+	  "definitions": {
+		"accountNumber": {
+		  "type": "object",
+		  "required": [
+		  ],
+		  "properties": {
+			"locale": {
+			  "type": "string",
+			  "description": "The current user's locale ISO code"
+			}
+		  }
+		}}
+  }
